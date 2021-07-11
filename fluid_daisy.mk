@@ -21,12 +21,24 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit from mido device
 $(call inherit-product, device/xiaomi/daisy/device.mk)
 
-# Inherit some common LineageOS stuff.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+# Inherit some common Fluid stuff.
+$(call inherit-product, vendor/fluid/config/common_full_phone.mk)
+
+# Inherit some common Project-Fluid flags.
+FLUID_BUILD_TYPE := UNOFFICIAL
+TARGET_BOOT_ANIMATION_RES := 1080
+
+# GApps.
+TARGET_INCLUDE_GAPPS := true
+TARGET_GAPPS_ARCH := arm64
+TARGET_SUPPORTS_GOOGLE_RECORDER := true
+
+# Inherit some common Project-Fluid stuff.
+$(call inherit-product, vendor/fluid/config/common.mk)
 
 # Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := daisy
-PRODUCT_NAME := lineage_daisy
+PRODUCT_NAME := fluid_daisy
 BOARD_VENDOR := Xiaomi
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := Mi A2 Lite

@@ -14,4 +14,9 @@
 # limitations under the License.
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/lineage_daisy.mk
+    $(LOCAL_DIR)/fluid_daisy.mk
+
+COMMON_LUNCH_CHOICES := \
+    fluid_daisy-user \
+    fluid_daisy-userdebug \
+    fluid_daisy-eng
